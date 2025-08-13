@@ -2,9 +2,11 @@ import React from 'react'
 
 export default async function Page({ params }) {
     const { blogid } =await params;
-    if(blogid % 2 === 0) {
-        throw new Error("This is an error for even blog IDs");
-    }
+    const no=Math.random();
+    console.log(no)
+   if(no>0.5){
+        throw new Error('Random error occurred while fetching blog data');
+   }
     return (
         <>
             <h1>Blog ID: {blogid}</h1>
